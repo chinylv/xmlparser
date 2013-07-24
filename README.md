@@ -1,8 +1,9 @@
 Description
 ===========
 
-xml parser using libxml2 &amp; GNU getopt
-user write information in xml files, and xmlparser parses the xml files and produces the switch whitelist or blacklist rules
+xmlparser uses libxml2 &amp; GNU getopt
+
+User writes information in xml files, and xmlparser parses the xml files and produces the switch whitelist or blacklist rules
 
 Installation
 ============
@@ -12,7 +13,7 @@ Installation
 
 Usage
 =====
-usage: ./rule [-f file -a action [-p port] [-t protocol]] | -h
+Usage: ./rule [-f file -a action [-p port] [-t protocol]] | -h
 
 The details about options & parameters:
    -f   file       A must. Specify the input xml file.
