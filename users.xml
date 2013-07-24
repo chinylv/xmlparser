@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<users>
+	<node>
+        <username>username1</username>
+        <fullname>fullname1</fullname>
+        <mobilephone>+86-12345678931</mobilephone>
+        <institute>I-IN Technology</institute>
+        <email>chinylv@gmail.com</email>
+        <startdate>2013.7.1</startdate>
+        <enddate>2059.9.1</enddate>
+        <ip>xxx.xxx.xxx.xxx/24</ip>
+        <ip>xxx.xxx.xxx.xxx/25</ip>
+    </node>
+    <node>
+        <username>username2</username>
+        <fullname>fullname2</fullname>
+        <mobilephone>+86-12345678932</mobilephone>
+        <institute>I-IN Technology</institute>
+        <email>xxxxxxx@xxx.com</email>
+        <startdate>2013.7.1</startdate>
+        <enddate>2059.9.1</enddate>
+        <ip>xxx.xxx.xxx.xxx/32</ip>
+    </node>
+</users>
