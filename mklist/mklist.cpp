@@ -24,12 +24,12 @@ bool isNumber(const string str)
 }
 
 void findHelp() {
-    cerr << "incorrect command, use ./rule -h to get help." << endl;
+    cerr << "incorrect command, use ./mklist -h to get help." << endl;
 }
 
 void printInformation()
 {
-    cout << "usage: ./rule [-f file -a action [-p port] [-t protocol]] | -h" << endl;
+    cout << "Usage: ./mklist [-f file -a action [-p port] [-t protocol]] | -h" << endl;
     cout << endl;
     cout << "The details about options & parameters:" << endl;
     cout << "   -f   file       " << "A must. Specify the input xml file." << endl;
@@ -38,8 +38,8 @@ void printInformation()
     cout << "   -t   protocol   " << "Not must. Specify the tcp or udp protocol." << endl;
     cout << "   -h              " << "Not must. Find help on how to use this command." << endl;
     cout << endl;
-    cout << "You can sepcify the output file via pipeline. " << endl
-        << "Like ./rule -f users.xml -p 20 -t tcp -a permit >> switches.rules"
+    cout << "You can sepcify the output file via pipeline." << endl
+        << "Like ./mklist -f users.xml -p 20 -t tcp -a permit >> switches.rules"
         << endl << endl;
     cout << "For further information, please contact me at chinylv@gmail.com." << endl;
 }
@@ -125,13 +125,13 @@ int main(int argc, char **argv)
 
     if (!fFlag) {
         cerr << "input files must be indicated, "
-            << "use ./rule -h to get help."
+            << "use ./mklist -h to get help."
             << endl;
         return -1;
     }
     if (!aFlag) {
         cerr << "action must be indicated, "
-            << "use ./rule -h to get help."
+            << "use ./mklist -h to get help."
             << endl;
         return -1;
     }
@@ -157,7 +157,7 @@ int main(int argc, char **argv)
         xmlFreeDoc (doc);
         return -1;
     }
-        
+
     string username;
     for (curNode = curNode->children; curNode != NULL; curNode = curNode->next) {
         username.clear();
@@ -173,7 +173,7 @@ int main(int argc, char **argv)
         }
         if ("" != username && iplist.size() == 1) {
             cout << ((aParam == "permit") ? "entry PermitSSH" : "entry DenySSH")
-                << username 
+                << username
                 << " { if match all { ";
 
             cout << (tFlag ? "protocol " + tParam + "; " : "");
@@ -181,12 +181,12 @@ int main(int argc, char **argv)
             cout << "source-address "
                 << iplist[0]
                 << ";";
-            
+
             cout << (pFlag ? (" destination-port " + pParam + ";") : "");
 
-            cout << " } then { " 
-                << aParam 
-                << "; } }" 
+            cout << " } then { "
+                << aParam
+                << "; } }"
                 << endl;
         } else if ("" != username && iplist.size() > 1) {
             for (size_t cur = 0; cur < iplist.size(); cur++) {
@@ -199,12 +199,12 @@ int main(int argc, char **argv)
                 cout << "source-address "
                     << iplist[cur]
                     << ";";
-            
+
                 cout << (pFlag ? (" destination-port " + pParam + ";") : "");
 
-                cout << " } then { " 
-                    << aParam 
-                    << "; } }" 
+                cout << " } then { "
+                    << aParam
+                    << "; } }"
                     << endl;
             }
         }
