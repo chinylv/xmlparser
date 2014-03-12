@@ -24,10 +24,11 @@ Usage
 Usage: ./mkglist [-f file] | -h
 
 The details about options & parameters:
+
    -f   file       A must. Specify the input file.
+
    -h              Not must. Find help on how to use this command.
 
-You can sepcify the output file via pipeline.
-Like ./mkglist -f users.xml >> output.txt
+You can sepcify the output file via pipeline. Like ./mkglist -f users.xml >> output.txt
 
 For further information, please contact me at chinylv@gmail.com.
